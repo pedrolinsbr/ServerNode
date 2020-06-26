@@ -1,0 +1,31 @@
+
+/*
+// Definição do diretório de log.
+var logDirectory = path.join(process.cwd(), 'logs');
+// Garantir o diretório de log
+fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
+
+// Cria um fluxo de gravação rotativo.
+var accessLogStream = rfs('access.log', {
+  interval: '1d', // gera um arquivo de log por dia.
+  path: logDirectory
+});
+
+app.use(logger(function (tokens, req, res)
+{
+  var date = moment(tokens.date(req, res, 'iso'), moment.ISO_8601).format('DD/MM/YYYY HH:mm');
+  return [
+    date, '-',
+    tokens.method(req, res),
+    tokens.url(req, res),
+    tokens.status(req, res),
+    tokens.res(req, res, 'content-length'), '-',
+    tokens['response-time'](req, res), 'ms'
+  ].join(' ');
+
+}/*, {stream: accessLogStream}));
+
+}, {stream: accessLogStream}));
+app.use(logger('dev')); */
+
+// Mostra os log no console ou grava no arquivo (no arquivo é só liberar o stream do comentário).

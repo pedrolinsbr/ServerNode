@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+
+      form input { border: 0; padding: 10px; width: 60%; margin-right: .5%; }
+
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px; }
+      #messages li:nth-child(odd) { background: #eee; }
+    </style>
+  </head>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script>
+    $(() => {
+
+      var room = '1444';
+      var ns   = '/evolog';
+
+      var chat = io.connect('http://34.235.52.140:3020');
+
+          chat.on('message', (strMsg) => {    
+
+          var data = new Date();
+
+          var [dia, mes, ano]  = [data.getDate(), data.getMonth()+1, data.getFullYear()];
+          var [hora, min, seg] = [data.getHours(), data.getMinutes(), data.getSeconds()];
+
+          console.log(dia.length);
+
+          if (String(dia).length == 1)  dia  = `0${dia}`;
+          if (String(mes).length == 1)  mes  = `0${mes}`;
+          if (String(hora).length == 1) hora = `0${hora}`;
+          if (String(min).length == 1)  min  = `0${min}`;
+          if (String(seg).length == 1)  seg  = `0${seg}`;
+
+          var strData = `${dia}/${mes}/${ano} ${hora}:${min}:${seg}`;
+
+          $('#messages').append($('<li>').text(`${strData} - ${strMsg}`));
+       });       
+
+       $('button#btn_all').click(() => {
+          chat.emit('emitter', { text: get_msg() });
+       });
+
+       $('button#btn_join').click(() => {
+         block_btn_join(true);
+         chat.emit('join', room);
+       });
+
+       $('button#btn_leave').click(() => {
+          block_btn_join(false);
+         chat.emit('leave', room);
+       });       
+
+       $('button#btn_room').click(() => {
+         chat.emit('emitter', { room, text: get_msg() });
+       });
+       
+       $('input#m').keyup(() => { if (event.keyCode == 13) $('button#btn_all').click(); });       
+    });
+
+    function get_msg() {
+
+      var msg = $('#m').val();
+      $('#m').val('');
+
+      return msg;
+    }
+
+    function block_btn_join(bool) {
+      $('button#btn_join').prop('disabled',   bool);
+      $('button#btn_room').prop('disabled',  !bool);
+      $('button#btn_leave').prop('disabled', !bool);
+    }
+
+  </script>
+
+  <body>
+    <ul id="messages"></ul>
+    <form action="" method="POST" onsubmit="return false">
+      <input id="m" autocomplete="off" />      
+      <button id="btn_join"  type="button">Join</button>
+      <button id="btn_leave" type="button" disabled>Leave</button>
+      <button id="btn_room"  type="button" disabled>Room</button>
+      <button id="btn_all"   type="button">All</button>
+    </form>
+  </body>
+</html>

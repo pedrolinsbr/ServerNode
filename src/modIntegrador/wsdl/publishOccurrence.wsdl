@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://www.neolog.com.br/cpl/publish/monitoring/occurrence/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.neolog.com.br/cpl/publish/monitoring/occurrence/">
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			attributeFormDefault="qualified" elementFormDefault="qualified"
+			targetNamespace="http://www.neolog.com.br/cpl/publish/monitoring/occurrence/">
+
+			<xsd:simpleType name="monitorableType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="trip" />
+					<xsd:enumeration value="invoice" />
+					<xsd:enumeration value="document" />
+				</xsd:restriction>
+			</xsd:simpleType>
+
+			<xsd:element name="publishOccurrence">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="monitorableCode" type="xsd:string" />
+						<xsd:element name="monitorableType" type="tns:monitorableType" />
+						<xsd:element name="whereLatitude" type="xsd:double"
+							minOccurs="0" nillable="true" />
+						<xsd:element name="whereLongitude" type="xsd:double"
+							minOccurs="0" nillable="true" />
+						<xsd:element name="timestamp" type="xsd:dateTime" />
+						<xsd:element name="causeCode" type="xsd:string" />
+						<xsd:element name="causeName" type="xsd:string" />
+						<xsd:element name="occurrenceCategoryCode" type="xsd:string" />
+						<xsd:element name="occurrenceCategoryName" type="xsd:string" />
+						<xsd:element name="impactTimeDelta" type="xsd:int"
+							minOccurs="0" nillable="true" />
+						<xsd:element name="impactValueDelta" type="xsd:double"
+							minOccurs="0" nillable="true" />
+						<xsd:element name="impactQuantityDelta" type="xsd:double"
+							minOccurs="0" nillable="true" />
+						<xsd:element name="status" type="xsd:string" />
+						<xsd:element name="comments" minOccurs="0" nillable="true">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="comment" maxOccurs="unbounded">
+										<xsd:complexType>
+											<xsd:sequence>
+												<xsd:element name="user" type="xsd:string" />
+												<xsd:element name="content" type="xsd:string" />
+												<xsd:element name="attachmentLink" type="xsd:string"
+													minOccurs="0" maxOccurs="unbounded" nillable="true" />
+											</xsd:sequence>
+										</xsd:complexType>
+									</xsd:element>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+			<xsd:element name="publishOccurrenceResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" maxOccurs="1" name="response" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>		
+		</xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="publishOccurrence">
+		<wsdl:part name="parameters" element="tns:publishOccurrence" />
+	</wsdl:message>
+
+	<wsdl:message name="publishOccurrenceResponse">
+		<wsdl:part name="parameters" element="tns:publishOccurrenceResponse" />
+	</wsdl:message>
+
+	<wsdl:portType name="publishOccurrenceServicePortType">
+		<wsdl:operation name="publishOccurrence">
+			<wsdl:input name="publishOccurrence" message="tns:publishOccurrence" />
+			<wsdl:output name="publishOccurrenceResponse" message="tns:publishOccurrenceResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:binding name="publishOccurrenceServiceHttpBinding"
+		type="tns:publishOccurrenceServicePortType">
+		<wsdlsoap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="publishOccurrence">
+			<wsdlsoap:operation soapAction="" />
+			<wsdl:input name="publishOccurrence">
+				<wsdlsoap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="publishOccurrenceResponse">
+				<wsdlsoap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<wsdl:service name="publishOccurrenceService">
+		<wsdl:port name="publishOccurrenceServiceHttpPort" binding="tns:publishOccurrenceServiceHttpBinding">
+			<wsdlsoap:address
+				location="http://localhost:3000/publishOccurrence" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

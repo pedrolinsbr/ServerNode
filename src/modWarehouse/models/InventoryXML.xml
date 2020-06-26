@@ -1,0 +1,42 @@
+<MATERIALPHYSINV_COUNT02>
+    <IDOC>
+        <EDI_DC40>
+            <TABNAM></TABNAM>
+            <MANDT></MANDT>
+            <DOCNUM></DOCNUM>
+            <DOCREL></DOCREL>
+            <STATUS></STATUS>
+            <DIRECT></DIRECT>
+            <OUTMOD></OUTMOD>
+            <IDOCTYP></IDOCTYP>
+            <MESTYP></MESTYP>
+            <SNDPOR></SNDPOR>
+            <SNDPRT></SNDPRT>
+            <SNDPRN></SNDPRN>
+            <RCVPOR></RCVPOR>
+            <RCVPRT></RCVPRT>
+            <RCVPRN></RCVPRN>
+            <CREDAT></CREDAT>
+            <CRETIM></CRETIM>
+        </EDI_DC40>
+        <E1MATERIALPHYSINV_COUNT>
+            <PHYSINVENTORY>0100048410</PHYSINVENTORY> <!--ID da tabela de inventário. deve conter 10 dígitos-->
+            <FISCALYEAR>2019</FISCALYEAR> <!--ano atual-->
+            <COUNT_DATE>20191030</COUNT_DATE> <!--data do dia do envio do arquivo-->
+           <!-- >>>>>>>Repete enquanto tiver itens-->
+            <E1BP_PHYSINV_COUNT_ITEMS>
+                <ITEM>001</ITEM> <!--NRLNITEM-->
+                <MATERIAL>000000000000012740</MATERIAL> <!--CDMATERI--> 
+                <BATCH>0012287727</BATCH><!--NRLOTE-->
+                <ENTRY_QNT>1</ENTRY_QNT> <!--QTMATERI-->
+                <ENTRY_UOM>KG</ENTRY_UOM><!--DSMEDIDA-->
+                <Z1E1WVINI_I>
+                    <ZZBATCH>PLN12345</ZZBATCH><!--NRALFANU-->
+                    <COUNTED_BY>COUNTEDBY</COUNTED_BY><!--DSRESPON-->
+                </Z1E1WVINI_I>
+            </E1BP_PHYSINV_COUNT_ITEMS>
+          <!-- >>>>>>>Repete enquanto tiver itens-->
+            <E1BP_PHYSINV_SERIALNUMBERS></E1BP_PHYSINV_SERIALNUMBERS>
+        </E1MATERIALPHYSINV_COUNT>
+    </IDOC>
+</MATERIALPHYSINV_COUNT02>

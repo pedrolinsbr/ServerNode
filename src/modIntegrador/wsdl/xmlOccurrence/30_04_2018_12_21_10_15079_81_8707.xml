@@ -1,0 +1,33 @@
+<SOAP-ENV:Envelope 
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header/>
+  <SOAP-ENV:Body>
+    <ns2:publishOccurrence 
+      xmlns:ns2="http://www.neolog.com.br/cpl/publish/monitoring/occurrence/" 
+      xmlns:ns3="http://www.neolog.com.br/cpl/publish/monitoring/transition/">
+      <monitorableCode>15079_81_8707</monitorableCode>
+      <monitorableType>invoice</monitorableType>
+      <monitorableExtensions>
+        <monitorableExtension>
+          <key>monitoring.invoice.extension.tripCode</key>
+          <textValue>51708</textValue>
+        </monitorableExtension>
+      </monitorableExtensions>
+      <whereLatitude>-23.6115347</whereLatitude>
+      <whereLongitude>-46.6943935</whereLongitude>
+      <timestamp>2018-04-27T17:51:58</timestamp>
+      <causeCode>60</causeCode>
+      <causeName>Respons�vel pelo recebimento ausente</causeName>
+      <occurrenceCategoryCode>1</occurrenceCategoryCode>
+      <occurrenceCategoryName>Insatisfat�rio</occurrenceCategoryName>
+      <status>INFORMATIVE</status>
+      <comments>
+        <comment>
+          <user>34220483837</user>
+          <content>Teste</content>
+          <attachmentLink>http://10.5.2.66:8088/cockpit-gateway/monitoring/public/comment/c7a66315e4d64d0c943ac85036a2e11f</attachmentLink>
+        </comment>
+      </comments>
+    </ns2:publishOccurrence>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

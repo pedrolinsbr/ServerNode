@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:n1="urn:sap-com:document:sap:rfc:functions">
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6"/>
+          <xsd:pattern value="\d*"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="quantum13.3">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="13"/>
+          <xsd:fractionDigits value="3"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="unit3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:n0="urn:sap-com:document:sap:rfc:functions">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions"/>
+      <xsd:complexType name="ZwcsItemPgr">
+        <xsd:sequence>
+          <xsd:element name="Posnr" type="n0:numeric6"/>
+          <xsd:element name="Lfimg" type="n0:quantum13.3"/>
+          <xsd:element name="Vrkme" type="n0:unit3"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZwcsItemUcPgr">
+        <xsd:sequence>
+          <xsd:element name="Exidv" type="n0:char20"/>
+          <xsd:element name="Posnr" type="n0:numeric6"/>
+          <xsd:element name="Lfimg" type="n0:quantum13.3"/>
+          <xsd:element name="Vrkme" type="n0:unit3"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZwcttItemPgr">
+        <xsd:sequence>
+          <xsd:element name="item" type="tns:ZwcsItemPgr" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZwcttItemUcPgr">
+        <xsd:sequence>
+          <xsd:element name="item" type="tns:ZwcsItemUcPgr" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZmfConfirmaInbound">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ItItemPgr" type="tns:ZwcttItemPgr"/>
+            <xsd:element name="ItItemUcPgr" type="tns:ZwcttItemUcPgr"/>
+            <xsd:element name="IvVbeln" type="n0:char10"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZmfConfirmaInboundResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EvOk" type="n0:char1"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZmfConfirmaInbound">
+    <wsdl:part name="parameters" element="tns:ZmfConfirmaInbound"/>
+  </wsdl:message>
+  <wsdl:message name="ZmfConfirmaInboundResponse">
+    <wsdl:part name="parameter" element="tns:ZmfConfirmaInboundResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ZWS_CONFIRMA_INBOUND">
+    <wsdl:operation name="ZmfConfirmaInbound">
+      <wsdl:input message="tns:ZmfConfirmaInbound"/>
+      <wsdl:output message="tns:ZmfConfirmaInboundResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConfInb" type="tns:ZWS_CONFIRMA_INBOUND">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ZmfConfirmaInbound">
+      <soap:operation soapAction="ZmfConfirmaInbound" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConfInb_soap12" type="tns:ZWS_CONFIRMA_INBOUND">
+    <wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ZmfConfirmaInbound">
+      <wsoap12:operation soapAction="ZmfConfirmaInbound" style="document"/>
+      <wsdl:input>
+        <wsoap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWS_CONFIRMA_INBOUND">
+    <wsdl:port name="ConfInb" binding="tns:ConfInb">
+      <soap:address location="http://34.235.52.140:3010/soap/wh/confinb"/>
+    </wsdl:port>
+    <wsdl:port name="ConfInb_soap12" binding="tns:ConfInb_soap12">
+      <wsoap12:address location="http://34.235.52.140:3010/soap/wh/confinb"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

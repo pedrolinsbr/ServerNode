@@ -1,0 +1,33 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns2:publishOccurrence xmlns:ns2="http://www.neolog.com.br/cpl/publish/monitoring/occurrence/" xmlns:ns3="http://www.neolog.com.br/cpl/publish/monitoring/transition/">
+         <ns2:monitorableCode>15079_81_8707</ns2:monitorableCode>
+         <ns2:monitorableType>invoice</ns2:monitorableType>
+         <ns2:monitorableExtensions>
+            <ns2:monitorableExtension>
+               <ns2:key>monitoring.invoice.extension.tripCode</ns2:key>
+               <ns2:textValue>51708</ns2:textValue>
+            </ns2:monitorableExtension>
+         </ns2:monitorableExtensions>
+         <ns2:whereLatitude>-23.6115347</ns2:whereLatitude>
+         <ns2:whereLongitude>-46.6943935</ns2:whereLongitude>
+         <ns2:timestamp>2018-04-27T14:51:58.968-03:00</ns2:timestamp>
+         <ns2:causeCode>60</ns2:causeCode>
+         <ns2:causeName>Responsável pelo recebimento ausente</ns2:causeName>
+         <ns2:occurrenceCategoryCode>1</ns2:occurrenceCategoryCode>
+         <ns2:occurrenceCategoryName>Insatisfatório</ns2:occurrenceCategoryName>
+         <ns2:impactTimeDelta xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+         <ns2:impactValueDelta xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+         <ns2:impactQuantityDelta xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+         <ns2:status>INFORMATIVE</ns2:status>
+         <ns2:comments>
+            <ns2:comment>
+               <ns2:user>34220483837</ns2:user>
+               <ns2:content>Teste</ns2:content>
+               <ns2:attachmentLink>http://10.5.2.66:8088/cockpit-gateway/monitoring/public/comment/c7a66315e4d64d0c943ac85036a2e11f</ns2:attachmentLink>
+            </ns2:comment>
+         </ns2:comments>
+      </ns2:publishOccurrence>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

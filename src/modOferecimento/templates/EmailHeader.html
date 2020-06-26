@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Email de Oferecimento</title>
+    
+    <style>
+        html {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        .container{ text-align: center }
+
+        .row{
+            width: 100%;
+            margin-bottom: 8%;
+        }
+
+        .col-sm-2 {
+            float: left;
+            width: 16%; 
+        }
+
+        .col-sm-3 {
+            float: left;
+            width: 26%;
+        }
+
+        .col-sm-4 {
+            float: left;
+            width: 35%;
+        }
+
+        .barra-top {
+            width: 95%; 
+            height: 50px; 
+            background: #1565C0;
+            margin-left:80px;
+            margin-bottom: 1%;
+            text-align: center;
+        }
+
+        .barra-texto {
+            color:#FFFFFF; 
+            float:left; 
+            margin-left:35%
+        }
+
+        .logo-div {
+            width: 10%;
+            float: left;
+            margin-left: 1%;
+            margin-top: 0.5%;
+        }
+
+        .logo { width: 50px }
+
+        .barra {
+            width: 100%; 
+            height: 50px; 
+            background: #1565C0;
+            margin-bottom: 1%;
+        }
+        
+        .label { 
+            font-size: 14px;
+            color:#8D8B8B;
+        }
+
+        .conteudo {
+            color:#1565C0;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .titulo {
+            color:#1565C0;
+            font-weight: bold;
+            font-size: 36px;
+        }
+        
+        .subtitulo {
+            color:#8D8B8B;
+            margin-bottom: 30px;
+            font-size: 22px;
+        }
+
+        .button {
+            width: 30%;
+            height: 60px;
+            background-color: #1565C0;
+            color: #FFFFFF;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /*TABLE*/
+        table { 
+            width: 80%; 
+            border-collapse: collapse; 
+            margin:50px auto;
+        }
+
+        /* Zebra striping */
+        tr:nth-child(odd) { 
+            background: #eee; 
+        }
+
+        .trn { 
+            background: #fff;
+            border: none;
+        }
+
+        .zebra {
+            background: #eee; 
+        }
+
+        th { 
+            background: #1565C0; 
+            color: white; 
+        }
+
+        td, th { 
+            padding: 6px; 
+            text-align: left; 
+            font-size: 18px;
+            border: 1px solid #ccc; 
+        }
+        
+        .tb-center {
+            text-align: center;
+        }
+
+        .tb-right {
+            text-align: right;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="logo-div">
+        <img class= "logo" src="http://artwebsistemas.com.br/img_bravo/bravo-logo-01.png" />
+    </div>
+    <div class="barra-top"> 
+        <h3 class="barra-texto">Bravo Serviços Logísticos</h3>
+    </div>
+
+    <div class="container">
+        <div>
+            <div class="titulo">@NMTRANSP@</div>
+            <div class="subtitulo">Uma nova carga está disponível</div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2 text-center">
+                <span class ="label">ID Carga</span><br>
+                <span class ="conteudo">@IDCARGA@</span>
+            </div> 
+
+            <div class="col-sm-2 text-center"> 
+                <span class ="label">Valor Frete</span><br>
+                <span class ="conteudo">R$ @VRFREPAG@</span>
+            </div>            
+
+            <div class="col-sm-4 text-center"> 
+                <span class ="label">Origem x Destino</span><br>
+                <span class ="conteudo">@NMCIDORC@/@CDESTORC@ x @NMCIDDEC@/@CDESTDEC@</span>
+            </div> 
+
+            <div class="col-sm-2 text-center"> 
+                <span class ="label">Peso Total</span><br>
+                <span class ="conteudo">@PSCARGA@ Kg</span>
+            </div>
+            
+            <div class="col-sm-2 text-center"> 
+                <span class ="label">Operação</span><br>
+                <span class ="conteudo">@TPOPERAC@</span>
+            </div>    
+        </div>
+
+        <br><br>
+        
+        <div class="row">
+            <div class="col-sm-2 text-center">
+                <span class ="label">Previsão Coleta</span><br>
+                <span class ="conteudo">@DTCOLATU@</span>
+            </div> 
+
+            <div class="col-sm-2 text-center"> 
+                <span class ="label">Valor da carga</span><br>
+                <span class ="conteudo">R$ @VRCARGA@</span>
+            </div> 
+
+            <div class="col-sm-2 text-center"> 
+                <span class ="label">Distância total</span><br>
+                <span class ="conteudo">@QTDISPER@ Km</span>
+            </div> 
+
+            <div class="col-sm-3 text-center"> 
+                <span class ="label">Tipo Veículo</span><br>
+                <span class ="conteudo">@DSTIPVEI@</span>
+            </div>
+            
+            <div class="col-sm-3 text-center"> 
+                <span class ="label">Tipo de Ocupação</span><br>
+                <span class ="conteudo">@TPOCUPAC@ (@VRPOROCU@%)</span>
+            </div>
+        </div>
+        
+        <a href="@URILINK@" target="_blank">
+            <button type="button" class="btn btn-lg btn-block button">Acessar a plataforma</button>
+        </a>
+
+        <div class="row">
+            <table align="center">
+                <thead>
+                    <tr class="tb-title" class="tb-center">
+                        <th class="tb-center" scope="col">#</th>
+                        <th class="tb-center" scope="col">Origem</th>
+                        <th class="tb-center" scope="col">Destino</th>
+                        <th class="tb-center" scope="col">Peso (Kg)</th>
+                        <th class="tb-center" scope="col">Volumes</th>
+                        <th class="tb-center" scope="col">Distância (Km)</th>
+                        <th class="tb-center" scope="col">Previsão entrega</th>
+                    </tr>
+                </thead>
+                <tbody>

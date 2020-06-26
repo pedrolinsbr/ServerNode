@@ -1,0 +1,73 @@
+{   
+    "global": {
+        "modulo": {
+            "horaCerta": "Hora cierta",
+            "oferecimento": "Oferecimento"
+        },
+        "erro": {
+            "padrao": "Se produjo un error inesperado. Por favor, vuelva a intentarlo. Si el error persiste, póngase en contacto con el admisor",
+            "inserirRegistro": "Error al insertar registro",
+            "atualizarRegistro": "Error al actualizar registro"
+        },
+        "sucesso": {
+            "inserirRegistro": "Registro insertado con éxito",
+            "atualizarRegistro": "Registro actualizado con éxito"
+        },
+        "form": {
+            "nmusuari": {
+                "pd": "Nombre de usuario",
+                "ab": "Usual",
+                "ot": "Empleado"
+            }
+        }
+    },
+    "hc": {
+        "erro": {
+            "reagendar": "No es posible volver a programar para el horario deseado"
+        },
+        "sucesso": {
+            "reagendar": "Reajuste completado"
+        },
+        "form": {
+            "nmexempl": {
+                "pd": "ejemplo"
+            }
+        },
+        "menu": {
+            "cadastros": "Entradas",
+            "tempoCarga": "Tiempo de carga",
+            "armazem": "Almacén",
+            "portarias": "Ordenanzas",
+            "motoristas": "Conductores",
+            "veiculos": "Vehículos",
+            "janelasArmazem": "Ventanas por almacén",
+            "tiposCargas": "Tipos de cargas",
+            "docas": "Muelles",
+            "recursoHumano": "Recurso Humano",
+            "portaria": "Ordenanza",
+            "equipes": "Equipos"
+        }
+    },
+    "mo": {
+        "form": {
+            "nmtitula": {
+                "pd": "Nombre del titular",
+                "ab": "Titular",
+                "em": "Emisor",
+                "de": "Destinatario",
+                "re": "Remitente",
+                "tr": "Portador",
+                "to": "Tomador",
+                "ex": "Despachador",
+                "rb": "Receptor"                
+            }
+        }
+    },
+    "of": {
+    },
+    "tr": {
+    },
+    "it": {
+    }
+
+}

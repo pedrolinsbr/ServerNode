@@ -1,0 +1,24 @@
+<SOAP-ENV:Envelope 
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header/>
+  <SOAP-ENV:Body>
+    <ns3:publishTransition 
+      xmlns:ns2="http://www.neolog.com.br/cpl/publish/monitoring/occurrence/" 
+      xmlns:ns3="http://www.neolog.com.br/cpl/publish/monitoring/transition/">
+      <monitorableCode>101568</monitorableCode>
+      <monitorableType>trip</monitorableType>
+      <monitorableExtensions>
+        <monitorableExtension>
+          <key>monitoring.trip.extension.creationDate</key>
+          <instantValue>2018-02-01T14:41:05.336-02:00</instantValue>
+        </monitorableExtension>
+      </monitorableExtensions>
+      <name>In�cio da viagem</name>
+      <serviceSequence>1</serviceSequence>
+      <timestamp>2018-04-27T15:08:14</timestamp>
+      <status>1</status>
+      <locationLatitude>-19.8212737</locationLatitude>
+      <locationLongitude>-47.8931063</locationLongitude>
+    </ns3:publishTransition>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

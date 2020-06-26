@@ -1,0 +1,78 @@
+{   
+    "global": {
+        "modulo": {
+            "horaCerta": "Right time",
+            "oferecimento": "Oferecimento",
+            "monitoria":"Monitoria"
+        },
+        "erro": {
+            "padrao": "An unexpected error happened. Please try again. If the error persists, contact the admin",
+            "inserirRegistro": "Error while registering",
+            "atualizarRegistro": "Error updating registry"
+        },
+        "sucesso": {
+            "inserirRegistro": "Record successfully entered",
+            "atualizarRegistro": "Registry successfully updated"
+        },
+        "form": {
+            "nmusuari": {
+                "pd": "Username",
+                "ab": "User",
+                "ot": "Employee"
+            },
+            "filtros": {
+                "pd": "Filters"
+            }   
+        }
+    },
+    "hc": {
+        "erro": {
+            "reagendar": "It is not possible to reschedule for the desired time"
+        },
+        "sucesso": {
+            "reagendar": "Rescheduling completed"
+        },
+        "form": {
+            "nmexempl": {
+                "pd": "example"
+            }
+        },
+        "menu": {
+            "cadastros": "Registrations",
+            "tempoCarga": "Charging Time",
+            "armazem": "Warehouse",
+            "portarias": "Ordinances",
+            "motoristas": "Drivers",
+            "veiculos": "Vehicles",
+            "janelasArmazem": "Windows by warehouse",
+            "tiposCargas": "Types of loads",
+            "docas": "Docks",
+            "recursoHumano": "Human resource",
+            "portaria": "Lobby",
+            "equipes": "Teams"
+        }
+    },
+    "mo": {
+        "form": {
+            "nmtitula": {
+                "pd": "Cardholder Name",
+                "ab": "Holder",
+                "em": "Issuer",
+                "de": "Addressee",
+                "re": "Sender",
+                "tr": "Shipping company",
+                "to": "Taker",
+                "ex": "Shipper",
+                "rb": "Receiver"
+            }
+        }
+    },
+    "of": {
+    },
+
+    "tr": {
+    },
+
+    "it": {
+    }
+}

@@ -1,0 +1,1148 @@
+{
+	"global": {
+		"modulo": {
+			"horaCerta": "Hora Certa",
+			"oferecimento": "Oferecimento",
+			"monitoria": "Monitoria"
+		},
+		"erro": {
+			"padrao": "Um erro inesperado aconteceu. Por favor, tente novamente. Caso o erro persista, contacte o administrador",
+			"inserir": "Erro na inserção",
+			"atualizar": "Erro na atualização",
+			"remover": "Erro na remoção"
+		},
+		"sucesso": {
+			"inserir": "Inserido com sucesso",
+			"atualizar": "Atualizado com sucesso",
+			"remover": "Removido com sucesso"
+		},
+		"vazio": {
+			"registro": "Nenhum registro selecionado"
+		},
+		"form": {
+			"acoes": {
+				"pd": "Ações"
+			},
+			"botoes": {
+				"pd": "Selecionar",
+				"sa": "Salvar",
+				"sc": "Salvar e Continuar",
+				"le": "Sair",
+				"at": "Atualizar",
+				"ca": "Cancelar",
+				"fi": "Filtrar",
+				"re": "Remover",
+				"ex": "Excluir",
+				"fe": "Fechar",
+				"si": "Sim",
+				"na": "Não"
+			},
+			"filtros": {
+				"pd": "Filtros"
+			},
+			"registros": {
+				"pd": "Registros",
+				"ai": "Atualizar Informações"
+			},
+			"dialogExcluir": {
+				"pd": "Deseja realmente excluir o(s) registro(s) selecionado(s)?",
+				"titulo": "Deletar registro(s)?",
+				"cancelar": "Cancelar",
+				"excluir": "Excluir"
+			},
+			"nmusuari": {
+				"pd": "Nome do usuário",
+				"ab": "Usuário",
+				"ot": "Funcionário",
+				"em": "E-mail do usuário",
+				"st": "Situação do usuário",
+				"tp": "Tipo do usuário",
+				"pl": "Usuários",
+				"ne": "Novo usuário",
+				"p4": "Montar 4PL",
+				"bv": "Usuário Bravo",
+				"ad": "Administrador",
+				"dtult": "Último Acesso"
+			},
+			"nmarmaze": {
+				"pd": "Nome do Armazém",
+				"ab": "Armazém"
+			},
+			"tpoperac": {
+				"pd": "Tipo de Operação",
+				"ab": "Tipo de Operação"
+			},
+			"materiais": {
+				"pd": "Nome do Material",
+				"ab": "Material"
+			},
+			"fornecedor": {
+				"pd": "Nome do Fornecedor",
+				"ab": "Fornecedor"
+			},
+			"nmveicul": {
+				"pd": "Nome do Veículo",
+				"ab": "Veículo"
+			},
+			"idg028": {
+				"pd": "ID Evolog",
+				"ot": "Armazém"
+			},
+			"idg003": {
+				"pd": "ID Evolog",
+				"ot": "Cidade"
+			},
+			"idt005": {
+				"pd": "Cluster",
+				"ot": "Id"
+			},
+			"idg041": {
+				"pd": "ID Seguradora",
+				"ot": "Seguradora"
+			},
+			"ids001": {
+				"pd": "ID Evolog",
+				"ot": "Usuário"
+			},
+			"idh009": {
+				"pd": "ID Evolog",
+				"ot": "Parâmetros"
+			},
+			"idh014": {
+				"pd": "ID Evolog",
+				"ot": "Configuração"
+			},
+			"idh015": {
+				"pd": "ID Evolog",
+				"ot": "Configuração"
+			},
+			"idh005": {
+				"pd": "ID Evolog",
+				"ot": "Cód. Janela"
+			},
+			"idh002": {
+				"pd": "ID Evolog",
+				"ot": "Tipo carga"
+			},
+			"idg058": {
+				"pd": "ID Evolog",
+				"ot": "De/Para"
+			},
+			"idg012": {
+				"pd": "ID Evolog",
+				"ot": "Histórico"
+			},
+			"idg030": {
+				"pd": "ID Evolog",
+				"ot": "Tipo veículo"
+			},
+			"dstipcar": {
+				"pd": "Descrição"
+			},
+			"dshistor": {
+				"pd": "Descrição histórico"
+			},
+			"dstipvei": {
+				"pd": "Tipo veículo"
+			},
+			"vrtemcar": {
+				"pd": "Minutos"
+			},
+			"vrpescar": {
+				"pd": "Peso carga"
+			},
+			"stcadast": {
+				"pd": "Situação Cadastro"
+			},
+			"dtcadast": {
+				"pd": "Dt. Cadastro"
+			},
+			"transint": {
+				"pd": "Transportadora Interna?"
+			},
+			"sndelete": {
+				"pd": "Registro deletado?"
+			},
+			"dtinicio": {
+				"pd": "Dt. Início"
+			},
+			"dtfinal": {
+				"pd": "Dt. Final"
+			},
+			"hrinicio": {
+				"pd": "Hora Início"
+			},
+			"hrfinal": {
+				"pd": "Hora Final"
+			},
+			"nmmodulo": {
+				"pd": "Módulos",
+				"ds": "Descrição do Módulo",
+				"nm": "Nome do Módulo",
+				"tg": "Tipo do Grupo"
+			},
+			"nmgrupo": {
+				"pd": "Grupo",
+				"nm": "Nome do Grupo",
+				"tg": "Tipo do Grupo"
+			},
+			"qtagenda": {
+				"pd": "Qtd. Agendas"
+			},
+			"dsconfig": {
+				"pd": "Descrição Configuração"
+			},
+			"qtminjan": {
+				"pd": "Minutos do Slot"
+			},
+			"qtminarm": {
+				"pd": "Minutos Preparação Armazém"
+			},
+			"nmcidade": {
+				"pd": "Nome Cidade"
+			},
+			"rssegura": {
+				"pd": "Razão social"
+			},
+			"cjsegura": {
+				"pd": "CNPJ"
+			},
+			"stparame": {
+				"pd": "Status"
+			},
+			"nrjanela": {
+				"pd": "Nro. Janela"
+			},
+			"dsjanela": {
+				"pd": "Descrição"
+			},
+			"idG023": {
+				"pd": "ID Evolog",
+				"ot": "Cód. Grupo Transp."
+			},
+			"idG024": {
+				"pd": "ID Evolog",
+				"ot": "Transportadora"
+			},
+			"idG031": {
+				"pd": "ID Evolog",
+				"ot": "Cód. Motorista"
+			},
+			"idG032": {
+				"pd": "ID Evolog",
+				"ot": "Cód. Tipo Veíc."
+			},
+			"idg009": {
+				"pd": "ID Unidade",
+				"ot": "Parâmetros"
+			},
+			"cdunidad": {
+				"pd": "Código"
+			},
+			"dsunidad": {
+				"ab": "Unidade de Medida",
+				"pd": "Descrição"
+			},
+			"tppessoa": {
+				"pd": "Tipo pessoa"
+			},
+			"dsendere": {
+				"pd": "Endereço"
+			},
+			"nrendere": {
+				"pd": "Número"
+			},
+			"dscomend": {
+				"pd": "Complemento"
+			},
+			"biendere": {
+				"pd": "Bairro"
+			},
+			"cpendere": {
+				"pd": "CEP"
+			},
+			"nrlatitu": {
+				"pd": "Latitude"
+			},
+			"nrlongit": {
+				"pd": "Longitude"
+			},
+			"idg023": {
+				"pd": "ID Evolog",
+				"ot": "Cód. Grupo Transp."
+			},
+			"ietransp": {
+				"pd": "Insc. Estadual"
+			},
+			"imtransp": {
+				"pd": "Insc. Municipal"
+			},
+			"cjtransp": {
+				"pd": "CNPJ / CPF"
+			},
+			"nmtransp": {
+				"pd": "Nome transportadora"
+			},
+			"rstransp": {
+				"pd": "Razão social"
+			},
+			"idg024": {
+				"pd": "Transportadora",
+				"mt": "Código Empresa"
+			},
+			"nrplavei": {
+				"pd": "Nro. da placa"
+			},
+			"dsrenava": {
+				"pd": "Renavam"
+			},
+			"nrchassi": {
+				"pd": "Nro. CHASSI"
+			},
+			"dtlicamb": {
+				"pd": "Licença Ambiental"
+			},
+			"dtcerreg": {
+				"pd": "Certificado de reg. IBAMA"
+			},
+			"dttestac": {
+				"pd": "Teste Tacógrafo"
+			},
+			"dttesfum": {
+				"pd": "Teste Fumaça"
+			},
+			"nraposeg":{
+				"ds": "Número Apólice"
+			},
+			"vrmaxcar":{
+				"ds": "Max. Carga Sem Escolta"
+			},
+			"vrmaxesc":{
+				"ds": "Max. Carga Com Escolta"
+			},
+			"snsegpro":{
+				"ds": "Seguro Próprio?"
+			},
+			"dtvenapo":{
+				"ds": "Data Vencimento"
+			},
+			"dsoperac":{
+				"ds": "Operação"
+			},
+			"dtvalant": {
+				"pd": "ANTT"
+			},
+			"dtaetbit": {
+				"pd": "Licença AET DNIT"
+			},
+			"dtliessp": {
+				"pd": "Licença esp. SP"
+			},
+			"dtaetgo": {
+				"pd": "Licença AET GO"
+			},
+			"dtaetmg": {
+				"pd": "Licença AET  MG"
+			},
+			"dtaetsp": {
+				"pd": "Licença AET SP"
+			},
+			"dtvalex2": {
+				"pd": "Extintor de 2KG"
+			},
+			"dtvale12": {
+				"pd": "Extintor 12KG"
+			},
+			"dtvalcap": {
+				"pd": "Capacete"
+			},
+			"dtvalpil": {
+				"pd": "Pilha da lanterna"
+			},
+			"dtmasfac": {
+				"pd": "Máscara semifacial"
+			},
+			"dtmaspo": {
+				"pd": "Máscara de pó"
+			},
+			"dtex12bi": {
+				"pd": "Extintor 12KG bitrem"
+			},
+			"nmmotori": {
+				"pd": "Motorista"
+			},
+			"cjmotori": {
+				"pd": "CNPJ / CPF"
+			},
+			"dtnascim": {
+				"pd": "Dt. Nascimento"
+			},
+			"dtvalexa": {
+				"pd": "Val. Exame Médico"
+			},
+			"dtvalcnh": {
+				"pd": "Val. CNH"
+			},
+			"dtvalseg": {
+				"pd": "Val. Cartão Seguradora"
+			},
+			"dtvenmop": {
+				"pd": "Val. MOPP"
+			},
+			"nrcnhmot": {
+				"pd": "Nro. CNH"
+			},
+			"tpcontra": {
+				"pd": "Tipo contrato",
+				"tipo": {
+					"a": "Agregado",
+					"c": "Transportadora",
+					"e": "Empregado",
+					"t": "Terceiro"
+				}
+			},
+			"rgmotori": {
+				"pd": "RG"
+			},
+			"dtdemmot": {
+				"pd": "Dt. Emissão"
+			},
+			"nrinsmot": {
+				"pd": "INSS"
+			},
+			"nrtitele": {
+				"pd": "Título Eleitoral"
+			},
+			"nrregsin": {
+				"pd": "Nro. Sindicato"
+			},
+			"dtadmmot": {
+				"pd": "Dt. Admissão"
+			},
+			"dsveicul": {
+				"pd": "Descrição"
+			},
+			"qtslots": {
+				"pd": "Qtd. Slots"
+			},
+			"qtjanela": {
+				"pd": "Qtd. Janelas"
+			},
+			"dsgrutra": {
+				"pd": "Grupo Transportadora"
+			},
+			"nrregmot": {
+				"pd": "Nro. Registro"
+			},
+			"nronu": {
+				"pd": "Número ONU",
+				"ab": "Nro. ONU"
+			},
+			"dsonu": {
+				"pd": "Descrição"
+			},
+			"dsgruemb": {
+				"pd": "Grupo de Embalagem"
+			},
+			"dsclaris": {
+				"pd": "Classificação de Risco"
+			},
+			"idg015": {
+				"ot": "ID"
+			},
+			"dscatego": {
+				"pd": "Categoria"
+			},
+			"dsarmaze": {
+				"pd": "Armazenamento"
+			},
+			"tpaprese": {
+				"pd": "Tipo de apresentação"
+			},
+			"idg037": {
+				"ot": "ID Categoria"
+			},
+			"dsgrupro": {
+				"pd": "Grupo de Produtos"
+			},
+			"feriado": {
+				"pd": "Feriado"
+			},
+			"dsferiad": {
+				"pd": "Descrição"
+			},
+			"idg054": {
+				"ot": "ID"
+			},
+			"dtdiafer": {
+				"pd": "Dia"
+			},
+			"dtmesfer": {
+				"pd": "Mês"
+			},
+			"dtanofer": {
+				"ot": "Ano"
+			},
+			"snrecorr": {
+				"pd": "Recorrente"
+			},
+			"diautil": {
+				"pd": "Dias Úteis"
+			},
+			"idg053": {
+				"ot": "ID",
+				"pd": "Operação"
+			},
+			"idg003or": {
+				"pd": "Cidade Origem"
+			},
+			"idg003de": {
+				"pd": "Cidade Destino"
+			},
+			"qtdiaent": {
+				"ot": "Dias Entrega"
+			},
+			"qtdiacol": {
+				"pd": "Dias Para Coleta"
+			},
+			"hofinoti": {
+				"pd": "Hr. Final de Recebimento"
+			},
+			"tpdias": {
+				"pd": "Tipo dias"
+			},
+			"dsgrucli":{
+				"pd": "Grupo cliente"
+			},
+			"dsocorre":{
+				"pd": "Descrição Motivo",
+				"ot": "Motivo"
+			},
+			"dsgrumot":{
+				"pd": "Grupo Motivo"
+			},
+			"idg040": {
+				"pd": "ID Evolog",
+				"ot": "Grupo"
+			},
+			"idi015": {
+				"ot": "Motivo"
+			},
+			"idg066": {
+				"ot": "Nível Ocorrência"
+			},
+			"cdmunici": {
+				"pd": "Cód. Município"
+			},
+			"cpcidade": {
+				"pd": "CEP"
+			},
+			"nmclientre": {
+				"pd": "Nome cliente rem."
+			},
+			"nmclientde": {
+				"pd": "Nome cliente dest."
+			},
+			"cdtarifa": {
+				"pd": "Tarifa"
+			},
+			"qtdienlo": {
+				"pd": "Qtd. dias em lotação"
+			},
+			"idt001":{
+				"ot": "Rota",
+				"ds": "ID"
+			},
+			"dspraca":{
+				"pd": "Descrição Praça"
+			}
+		},
+		"grid": {
+			"stcadast": {
+				"i": "Inativo",
+				"a": "Ativo",
+				"null": "-"
+			}
+		}
+	},
+	"hc": {
+		"erro": {
+			"insert": "Erro na inserção",
+			"update": "Erro na atualização",
+			"delete": "Erro na remoção",
+			"reagendar": "Não é possivel reagendar para o horário desejado",
+			"slotsIndisponivel": "Nem todos os Slot's estão liberados. Por favor, atualize refaça a pesquisa",
+			"deliveryNaoEncontrada": "Nenhuma delivery encontrada",
+			"nenhumaCargaEncontrada": "Nenhuma carga encontrada",
+			"haConhecimento": "Há conhecimento ativo para esta carga",
+			"slotsLiberados": "Nem todos os slots estão liberados. Por favor, atualize refaça a pesquisa",
+			"agendaNaoEncontrado": "Agendamento não encontrado",
+			"nenhumMilestoneGerado": "Nenhum milestone gerado",
+			"formIncompleto": "Há campos incompletos",
+			"nenhumRegistro": "Nenhum registro econtrado",
+			"parametroCadastrado": "Já existe parâmetro cadastrado",
+			"slotsCadastrado": "Já existe slots configurados em outro parâmetro"
+		},
+		"sucesso": {
+			"insert": "Inserção com sucesso",
+			"update": "Atualização com sucesso",
+			"delete": "Removido com sucesso",
+			"reagendar": "Reagendamento concluído",
+			"agendaExcluida": "Excluído com sucesso",
+			"statusCriado": "Status Criado",
+			"cancelamentoCheckOut": "Cancelamento de Check-out feito com sucesso",
+			"atualizado": "Atualizado com sucesso"
+		},
+		"form": {
+			"nmexempl": {
+				"pd": "Exemplo"
+			},
+			"idh007": {
+				"pd": "Slot"
+			},
+			"idh006": {
+				"pd": "Agendamento"
+			},
+			"nmarmaze": {
+				"pd": "Armazém"
+			},
+			"dsjanela": {
+				"pd": "Janela"
+			},
+			"hoinicio": {
+				"pd": "Hora Ínicio"
+			},
+			"hofinal": {
+				"pd": "Hora Final"
+			},
+			"sthorari": {
+				"pd": "Status Slot"
+			},
+			"sndelete": {
+				"pd": "Excluído"
+			},
+			"tpmovto": {
+				"pd": "Operação"
+			},
+			"tpoperac": {
+				"pd": "Tipo de Operação"
+			},
+			"tppesage": {
+				"pd": "Tipo Pesagem"
+			},
+			"qtpeso": {
+				"pd": "Peso Agendado"
+			},
+			"stagenda": {
+				"pd": "Status Agendamento"
+			},
+			"botoes": {
+				"sa": "Salvar",
+				"sn": "Salvar e Avançar",
+				"le": "Sair",
+				"ca": "Cancelar",
+				"cv": "Cancelar e voltar",
+				"at": "Atualizar",
+				"fi": "Filtrar",
+				"re": "Remover",
+				"rp": "Replicar",
+				"as": "Atribuir Status",
+				"lp": "Limpar",
+				"ds": "Deletar Slots",
+				"dp": "Deletar Parâmetro"
+			}
+		},
+		"tela": {
+			"acao": {
+				"n": "Novo - ",
+				"e": "Editar - ",
+				"v": "Visualizar - "
+			}
+		},
+		"menu": {
+			"cadastros": "Cadastros",
+			"tempoCarga": "Tempo de Carga",
+			"armazem": "Armazém",
+			"Materiais": "Material",
+			"Fornecedor": "Fornecedor",
+			"portarias": "Portarias",
+			"motoristas": "Motoristas",
+			"veiculos": "Veículos",
+			"janelasArmazem": "Janelas por Armazém",
+			"tiposCargas": "Tipos de cargas",
+			"docas": "Docas",
+			"recursoHumano": "Recurso Humano",
+			"portaria": "Portaria",
+			"portariaPesagem": "Portaria Pesagem",
+			"equipes": "Equipes",
+			"configuracoes": "Configurações",
+			"parametrosArmazem": "Parâmetros Armazém",
+			"dashboard": "Dashboard",
+			"aceite": "Aceite",
+			"recebimento": "Recebimento",
+			"acompanhamento": "Acompanhamento",
+			"controlTower": "Control Tower",
+			"montarAgendamento": "Montar Agendamento",
+			"operacoes": "Operações",
+			"checklist": "Checklist",
+			"checkout": "Checkout",
+			"janelas": "Janelas",
+			"agendamentos": "Agendamentos",
+			"reagendamentos": "Reagendamentos",
+			"bravo3pl": "Bravo 3PL",
+			"carga": "Carga",
+			"descarga": "Descarga",
+			"consultaAgendamento": "Consulta Agendamento",
+			"statusSlots": "Alterar status slot",
+			"tempoStatus": "Tempo status",
+			"tempoArmazem": "Tempo Armazém",
+			"relatorios": "Relatórios",
+			"agendamento": "Agendamento",
+			"pesagens": "Pesagens",
+			"hc-bravo-bi": "Bravo BI",
+			"controleOperacao": "Controle de Operação",
+			"controleOperacaoPesagem": "Controle de Operação",
+			"consultaNotas": "Consulta de Notas",
+			"transportadora": "Transportadora",
+			"grupoTransportadora": "Grupo Transportadora",
+			"tipoVeiculo": "Tipo Veículo",
+			"mapaAgendamento": "Mapa de Agendamento",
+			"relatorioNotas": "Notas",
+			"clientes": "Clientes",
+			"pesagem": "Pesagem",
+			"pesagem-novo": "Pesagem (Novo)",
+			"imprimir-ticket":"Imprimir Ticket",
+			"tipo-operacao":"Tipo de Operação",
+
+			"relatorioFaturamento"   : "Faturamento",
+			"relatorioTransporte"    : "Transporte / PCE",
+			"relatorioQualidade"     : "Qualidade",
+			"relatorioLogistica"     : "Logística",
+			"relatorioTransportadora": "Transportadora",
+			"relatorioDPA"           : "Agendamentos DPA",
+			"relatorioPesagem"       : "Agendamento e Pesagem",
+			"relatorioBravo"         : "Agendamentos Bravo",
+
+			"suporte":"Suporte",
+			"statusAgendamentos":"Status Agendamentos"
+		},
+		"title": {
+			"intervalo": {
+				"pd": "Intervalo",
+				"pl": "Intervalos"
+			},
+			"desconsiderar": {
+				"pd": "Desconsiderar"
+			},
+			"das": {
+				"pd": "Das"
+			},
+			"ate": {
+				"pd": "até"
+			},
+			"inicio": {
+				"pd": "Início"
+			},
+			"final": {
+				"pd": "Final"
+			},
+			"minutosSlot": {
+				"pd": "Minutos do Slot"
+			},
+			"minutosEdit": {
+				"pd": "Minutos Edição"
+			},
+			"periodoSlot": {
+				"in": "Período inicial",
+				"fi": "Período final"
+			}
+		},
+		"diaSemana": {
+			"nrdia": {
+				"0": "Domingo",
+				"1": "Segunda a Sexta",
+				"6": "Sábado",
+				"x": "Indefinido"
+			}
+		},
+		"stParametro": {
+			"status": {
+				"i": "Processando",
+				"s": "Não iniciado",
+				"p": "Processado",
+				"n": "Não processado",
+				"x": "Indefinido"
+			}
+		},
+		"statusAgenda": {
+			"status": {
+				"0": "Inativo",
+				"1": "Livre",
+				"2": "Pré-reservado",
+				"3": "Reservado",
+				"4": "Chegou na portaria",
+				"5": "Entrou na portaria",
+				"6": "Iniciou a operação",
+				"7": "Finalizou a operação",
+				"8": "Saiu na portaria",
+				"9": "Faltou",
+				"10": "Cancelado",
+				"12": "Balança",
+				"x": "Indefinido"
+			}
+		},
+		"statusSlot": {
+			"stSlot": {
+				"r": "Reservado",
+				"b": "Bloqueado",
+				"l": "Livre",
+				"o": "Ocupado",
+				"x": "Indefinido"
+			}
+		},
+		"telas": {
+			"acao": {
+				"novo": "Novo ",
+				"alterar": "Alterar ",
+				"excluir": "Excluir ",
+				"visualizar": "Visualizar "
+			}
+		}
+	},
+	"mo": {
+		"form": {
+			"acoes": {
+				"sa": "Salvar Alterações",
+				"fu": "Filtrar usuários",
+				"su": "Salvar usuário",
+				"au": "Adicionar usuário individualmente",
+				"ip": "Importar permissões de outro módulo",
+				"novoCliente": "Novo Cliente",
+				"removerRegistro": "Deseja remover o registro?",
+				"adicionarMenu": "Adicionar Menu",
+				"cancelarVinculo": "Cancelar Vínculo",
+				"removerVinculo": "Remover Vínculo",
+				"importante": "Importante: ",
+				"sureRemoverVinculo": "Deseja realmente cancelar o vínculo desse menu?",
+				"camposModificados": "Existem campos que foram modificados",
+				"sureCancelar": "Deseja realmente cancelar?",
+				"adicionarMenuAcoesDisponiveis": "Para adicionar o menu, informe as ações disponíveis.",
+				"menuNaoEncontrado": "Não foi possível encontrar um menu vínculado a esse módulo.",
+				"usuarioGrupo": "Grupos de Usuário"
+			},
+			"nmtitula": {
+				"pd": "Nome do titular",
+				"ab": "Titular",
+				"em": "Emissor",
+				"de": "Destinatário",
+				"re": "Remetente",
+				"tr": "Transportadora",
+				"to": "Tomador",
+				"ex": "Expedidor",
+				"rb": "Recebedor",
+				"rs": "Razão Social",
+				"nf": "Nome Fantasia",
+				"cc": "CNPJ / CPF",
+				"ie": "Inscrição Estadual",
+				"im": "Inscrição Municipal",
+				"ci": "Cidade",
+				"en": "Endereço",
+				"nu": "Número",
+				"co": "Complemento",
+				"ba": "Bairro",
+				"ce": "CEP",
+				"la": "Latitude",
+				"lo": "Longitude",
+				"tp": "Tipo Pessoa"
+			},
+			"referencia": "Referência",
+			"valor": "Valor"
+		},
+		"menu": {
+			"acoes": {
+				"pd": "Padrão",
+				"cm": "Criar Menu"
+			},
+			"info": {
+				"pd": "Menu Pai",
+				"dm": "Descrição do Menu",
+				"dt": "Descrição do Título",
+				"dg": "Descrição do Grupo",
+				"md": "Descrição do Modulo",
+				"ni": "Nível",
+				"or": "Ordem",
+				"ic": "Ícone",
+				"ca": "Caminho da Rota"
+			}
+		},
+		"usuarios": {
+			"titulos": {
+				"pd": "Liberação de acessos"
+			}
+		}
+	},
+	"of": {
+		"erro": {
+			"nht": "Não há transportadoras disponíveis para esta carga",
+			"nmr": "Nenhum motivo de recusa foi encontrado",
+			"ntv": "Nenhum tipo de veículo foi encontrado"
+		},
+		"sucesso": {},
+		"botoes": {
+			"of": "Oferecer",
+			"ds": "Distribuir",
+			"ntv": "Nenhum tipo de veículo foi encontrado"
+		},
+		"modal": {
+			"title": {
+				"altTransp": "Alterar Transportadora",
+				"altTpVei": "Alterar Tipo de Veículo",
+				"mtRec": "Motivo Recusa"
+			},
+			"content": {
+				"sltr": "Selecione uma Transportadora",
+				"slmr": "Selecione um Motivo da Recusa",
+				"sltv": "Selecione um Tipo de Veículo"
+			}
+		},
+		"card": {
+			"title": {
+				"hc": "Histórico da Carga",
+				"dc": "Detalhes da Carga",
+				"bl": "Backlog",
+				"ro": "Roteirizadas",
+				"of": "Oferecidas",
+				"re": "Recusadas",
+				"ac": "Aceitas",
+				"ag": "Agendadas"
+			}
+		},
+		"grid": {
+			"colums": {
+				"IDG046": "ID Carga",
+				"esp": "Espera",
+				"ps": "Peso",
+				"car": "Carga",
+				"transp": "Transportadora",
+				"ori": "Origem",
+				"des": "Destino",
+				"clas": "Classificação",
+				"hist": "Histórico",
+				"det": "Detalhes"
+			}
+		},
+		"form": {
+			"colums": {
+				"IDG046": "ID Carga",
+				"PSCARGA": "Peso Carga",
+				"VROCUPA": "Ocupação",
+				"DISTNCI": "Distância",
+				"DTENTREF": "Previsão de Entrega",
+				"TPVEICU": "Tipo de Veículo",
+				"DSTIPCAR": "Tipo de Carga",
+				"NMTRANSP": "Transportadora",
+				"DTCOLETF": "Previsão de Coleta"
+			}
+		}
+	},
+	"tr": {
+
+	},
+	"it": {
+		"sucesso": {
+			"insert": "Inserção efetuada com sucesso",
+			"update": "Atualização efetuada com sucesso",
+			"delete": "Removido com sucesso",
+			"reagendar": "Reagendamento concluído",
+			"agendaExcluida": "Excluido com sucesso",
+			"statusCriado": "Status Criado",
+			"cancelamentoCheckOut": "Cancelamento de Check-out feito com sucesso",
+			"atualizado": "Atualizado com sucesso"
+		},
+		"erro": {
+			"insert": "Erro na inserção",
+			"update": "Erro na atualização",
+			"delete": "Erro na remoção",
+			"formIncompleto": "Há campos incompletos"
+		},
+		"telas": {
+			"acao": {
+				"visualizar": "Visualizar",
+				"alterar": "Alterar",
+				"novo": "Novo",
+				"nova": "Nova"
+			}
+		},
+		"menu": {
+			"delivery": "Delivery",
+			"interfaces": "Interfaces",
+			"cargas": "Cargas",
+			"cargasDevolucao":"Cargas Devolução",
+			"cadastros": "Cadastros",
+			"reasonCodes": "Reason Codes",
+			"municipios": "Municípios",
+			"unidadesMedida": "Unidades de Medida",
+			"codigosOnu": "Códigos ONU",
+			"categoriasProdutos": "Categorias de Produtos",
+			"gruposProdutos": "Grupo de Produtos",
+			"produtos": "Produtos",
+			"gruposClientes": "Grupo de Clientes",
+			"clientes": "Clientes",
+			"feriados": "Feriados",
+			"diasUteis": "Prazos de Entrega",
+			"relatorios": "Relatórios",
+			"ocorrencias": "Ocorrências",
+			"itensDelivery": "Itens Delivery",
+			"vendorCode": "Vendor Code",
+			"contingencia": "Contingência",
+			"relatorio-ead": "Relatório EAD",
+			"motivosReasonCode": "Motivos - Reason Code",
+			"canceladas" : "Cargas Canceladas",
+			"motivo-cancelamento" : "Motivos Cancelamento"
+		}
+	},
+	"tp": {
+		"sucesso": {
+			"insert": "Inserção efetuada com sucesso",
+			"update": "Atualização efetuada com sucesso",
+			"delete": "Removido com sucesso"
+		},
+		"erro": {
+			"insert": "Erro na inserção",
+			"update": "Erro na atualização",
+			"delete": "Erro na remoção"
+
+		},
+		"telas": {
+			"acao": {
+				"visualizar": "Visualizar",
+				"alterar": "Alterar",
+				"novo": "Nova"
+			}
+		},
+		"menu": {
+			"cadastros": "Cadastros",
+			"administrativo": "Administrativo",
+			"log": "Log",
+			"logaplicacao": "Log aplicação",
+			"dePara": "De/para",
+			"cluster":"Cluster",
+			"montagemCarga": "Montar carga",
+			"veiculos": "Veículos",
+			"tipoVeiculo": "Tipo veículo",
+			"motorista": "Motorista",
+			"apolice": "Apólice",
+			"configuracaoOferecimento": "Oferecimento",
+			"cargas": "Cargas",
+			"mountingLoad": "Mounting load",
+			"rotas": "Rotas",
+			"liberacaoOcorrencias": "Liberação ocorrências",
+			"historicoOcorrencia":"Histórico",
+			"niveisOcorrencia":"Nível ocorrência",
+			"fornecedor":"Fornecedor",
+			"clientes":"Clientes",
+			"Cockpit":"Cockpit",
+			"transportadora":"Transportadora",
+			"ocorrencia": "Ocorrência",
+			"conhecimento": "Conhecimento",
+			"conhecimentoDelivery": "Conhecimento vs Delivery",
+			"segurancaPremiada": "Segurança PREMIADA",
+			"relatorio": "Relatórios",
+			"cargaParadas": "Carga/Paradas",
+			"parametrosGeraisCarga": "Parâmetros gerais",
+			"grupoOcorrencia": "Grupo ocorrência",
+			"grupoTransportadora": "Grupo Transportadora",
+			"liberarConhecimento" : "Liberar conhecimento",
+			"mobile" : "Mobile",
+			"qrcode" : "QR Code",
+			"cidadeTarifa" : "Cidade tarifa",
+			"armazemTransp" : "Armazém/Transportadora",
+			"raioX" : "Raio-X",
+			"MDF-e" : "MDF-e",
+			"driversScore": "Segurança PREMIADA",
+			"ctrcExpedir": "CTRC a expedir",
+			"analiseCarga": "Análise de carga",
+			"docPenCarga": "Docs. pendentes carga",
+			"documentoViagem": "Docs. para viagem",			
+			"validacaoMalote": "Validação Malote",
+			"lancamento": "Lançamento",
+			"suporte": "Help Desk",
+			"helpDeskMdf": "MDF",
+			"helpDeskCte": "CTE",
+			"helpDeskDlaDelivery": "SLA Delivery",
+			"horarioCorte": "Horário de Corte",
+			"averbacao": "Averbação",
+			"checagemDocumento4PL": "Checagem Documento 4PL",
+			"checagemDocumento3PL": "Checagem Documento 3PL",
+			"ordemPagamento": "Ordem de Pagamento",
+			"pagamento": "Pagamento",
+			"cargaSinistrada": "Cargas Sinistradas",
+			"ocorrencias": "Ocorrências",
+			"componentesFretes": "Componentes Frete",
+			"importarXml": "Importar Xml"
+		},
+		"form":{
+			"botoes":{
+				"ci": "Cidades",
+				"cl": "Clientes"
+			}
+		}
+	},
+	"pf": {
+		"menu":{
+			"CTE": "CTE",
+			"Importar ": "Importar",
+			"Ocorrência" : "Ocorrência",
+			"Listar" : "Listar",
+			"Enviar Arquivos CT-e": "Enviar Arquivos CT-e",
+			"Cadastros": "Cadastros",
+			"Componentes": "Componentes"
+		}
+	},
+	"lr": {
+		"menu": {
+			"Dashboard": "Dashboard",
+			"Devolucao": "Devolução",
+			"Devolucao4pl":"Devolução 4-PL",
+			"Devolucao3pl":"Devolução 3-PL",
+			"RelatorioLogistica":"Relatórios",
+			"RelatorioDevolucao":"Devolução",
+			"RelatorioRecusa":"Recusa",
+			"Historico": "Histórico",
+			"Recusa": "Recusa",
+			"cadastros": "Cadastros",
+			"transportadoras": "Transportadoras",
+			"Área de atendimento":"Área de Atendimento"
+		}
+	},
+	"ds":{
+		"menu":{
+			"Transferência": "Transferência",
+			"gestaoMovimentacao": "Gestão de Movimentação",
+			"gestao-cd-ag": "Gestão de CD | AG",
+			"Cadastro de Planejamento": "Cadastro de Planejamento",
+			"PIB": "PIB",
+			"Distribuição" : "Distribuição",
+			"Home": "Home",
+			"Produto": "Produto",
+			"Qualidade Oferecimento": "Qualidade Oferecimento",
+			"ocorrencia": "Ocorrência",
+			"reconhecimento-receita": "Reconhecimento de Receita",
+			"faturamento-receita": "Faturamento e Receita",
+			"importar-xlsx": "Importar Ocupação",
+			"importar-cutoff": "Importar Cut-Off",
+			"cadastros" : "Cadastros",
+			"mapa": "Mapa de Localização",
+			"mapa-calor": "Mapa de Calor",
+			"tela-syngenta": "Distribuição Syngenta",
+			"faturamento-receita-upl": "Faturamento e Receita - UPL",
+			"Oferecimento": "Oferecimento",
+			"ETMS": "ETMS",
+			"editar-cutoff": "Editar Cut-Off"
+		}
+	},
+	"wh": {
+		"cockpit" : "Cockpit",
+		"interfaces" : "Interfaces"
+	}
+}

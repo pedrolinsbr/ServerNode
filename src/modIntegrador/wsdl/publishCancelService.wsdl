@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="publishCancelServiceRequest"
+    targetNamespace="urn:neolog:cockpit:TripCancelRequestService" xmlns:p1="urn:neolog:cockpit:TripCancelRequestService"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+        <xsd:schema targetNamespace="urn:neolog:cockpit:TripCancelRequestService"
+            xmlns="urn:neolog:cockpit:TripCancelRequestService">
+
+			<!-- RestriÃ§Ãµes de ids Integer -->
+			<xsd:simpleType name="idIntType">
+				<xsd:restriction base="xsd:integer">
+					<xsd:minExclusive value="0" />
+					<xsd:maxExclusive value="10000000000" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			
+			<!-- RestriÃ§Ãµes de ids String -->
+			<xsd:simpleType name="sourceIdType">
+				<xsd:restriction base="xsd:string">
+					<xsd:whiteSpace value="collapse" />
+					<xsd:minLength value="1" />
+					<xsd:maxLength value="30" />
+				</xsd:restriction>
+			</xsd:simpleType>
+
+			<!-- RestriÃ§Ãµes de status de cancelamento (enum) -->
+			<xsd:simpleType name="cancelStatusEnum">
+				<xsd:restriction base="xsd:integer">
+					<xsd:minInclusive value="0" />
+					<xsd:maxInclusive value="3" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			
+			<!-- DefiniÃ§Ã£o do elemento Load -->
+			<xsd:complexType name="load">
+				<xsd:sequence>
+					<xsd:element name="loadId" type="idIntType"
+						minOccurs="1" maxOccurs="1" nillable="false" />
+						
+					<xsd:element name="loadSourceId" type="sourceIdType"
+						minOccurs="0" maxOccurs="1" nillable="false" />						
+				</xsd:sequence>
+			</xsd:complexType>
+			
+			<!-- DefiniÃ§Ã£o do elemento Trip -->
+			<xsd:complexType name="trip">
+				<xsd:sequence>
+
+					<xsd:element name="tripId" type="idIntType"
+						minOccurs="1" maxOccurs="1" nillable="false" />
+					
+					<xsd:element name="loads" minOccurs="1" maxOccurs="1"
+							nillable="false">
+							
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="load" type="load"
+										minOccurs="1" maxOccurs="unbounded" nillable="false">
+										
+									</xsd:element>
+								</xsd:sequence>
+							</xsd:complexType>
+					</xsd:element>	
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<!-- Cancel Request -->
+			<xsd:element name="publishCancelService">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="basketSourceId" type="sourceIdType"
+							minOccurs="0" maxOccurs="1" nillable="false" />
+
+						<xsd:element name="regionSourceId" type="sourceIdType"
+							minOccurs="1" maxOccurs="1" nillable="false" />
+							
+						<xsd:element name="trips" minOccurs="1" maxOccurs="1"
+							nillable="false">
+							
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="trip" type="trip"
+										minOccurs="1" maxOccurs="unbounded" nillable="false">
+										
+									</xsd:element>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<!-- Cancel Response -->
+			<xsd:element name="publishCancelServiceResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Result" minOccurs="1" maxOccurs="1"
+							nillable="false">
+							<xsd:complexType>
+								<xsd:sequence>
+                                    <xsd:element name="item" maxOccurs="unbounded" minOccurs="1">
+										<xsd:complexType>
+											<xsd:sequence>
+												<xsd:element
+													name="Tripid" type="idIntType" maxOccurs="1" minOccurs="1" nillable="false">
+												</xsd:element>
+												<xsd:element
+													name="Regionsourceid" type="sourceIdType" maxOccurs="1"
+													minOccurs="1" nillable="false">
+												</xsd:element>
+												<xsd:element
+													name="Status" type="cancelStatusEnum" maxOccurs="1"
+													minOccurs="1" nillable="false">
+												</xsd:element>
+												<!-- Opcional, pode ter vÃ¡rias -->
+												<xsd:element
+													name="Errormessage" type="xsd:string" maxOccurs="unbounded" minOccurs="0">
+												</xsd:element>
+											</xsd:sequence>
+										</xsd:complexType>
+                                    </xsd:element>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="publishCancelService">
+		<wsdl:part name="publishCancelService"
+			element="p1:publishCancelService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" />
+	</wsdl:message>
+	<wsdl:message name="publishCancelServiceResponse">
+		<wsdl:part name="publishCancelServiceResponse"
+			element="p1:publishCancelServiceResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" />
+	</wsdl:message>
+	<wsdl:portType name="publishCancelServiceRequest">
+		<wsdl:operation name="publishCancelServiceRequest">
+			<wsdl:input message="p1:publishCancelService" />
+			<wsdl:output message="p1:publishCancelServiceResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="publishCancelServiceRequestBinding"
+		type="p1:publishCancelServiceRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+		<wsdl:operation name="publishCancelServiceRequest">
+			<soap:operation soapAction="http://www.neolog.com.br/cpl/publishing/releaseTrip"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+			<wsdl:input>
+				<soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="publishCancelServiceRequestService">
+		<wsdl:port name="publishCancelServiceRequestPort"
+			binding="p1:publishCancelServiceRequestBinding" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+			<soap:address
+				location="http://localhost:3000/mockpublishCancelServiceRequestBinding"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,36 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns:tns="https://evolog.com.br" 
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" name="Iwhcservice" targetNamespace="https://evolog.com.br">
+  <message name="SendDelivery0Request">
+    <part name="DeliveryXML" type="xs:string"/>
+  </message>
+  <message name="SendDelivery0Response">
+    <part name="return" type="xs:string"/>
+  </message>
+  <portType name="Iwhc">
+    <operation name="SendDelivery">
+      <input message="tns:SendDelivery0Request"/>
+      <output message="tns:SendDelivery0Response"/>
+    </operation>
+  </portType>
+  <binding name="Iwhcbinding" type="tns:Iwhc">
+    <binding xmlns="http://schemas.xmlsoap.org/wsdl/soap/" style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="SendDelivery">
+      <operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:whcIntf-Iwhc#SendDelivery" style="rpc"/>
+      <input>
+        <body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:whcIntf-Iwhc"/>
+      </input>
+      <output>
+        <body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:whcIntf-Iwhc"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="Iwhcservice">
+    <port name="IwhcPort" binding="tns:Iwhcbinding">
+      <address xmlns="http://schemas.xmlsoap.org/wsdl/soap/" location="http://34.235.52.140:3010/Iwhc"/>
+    </port>
+  </service>
+</definitions>

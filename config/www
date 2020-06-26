@@ -1,0 +1,284 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+require('dotenv').config();
+require('dotenv').config({ path: '.env.' + process.env.APP_ENV.toLowerCase() });
+
+var os          = require('os');
+var ifaces      = os.networkInterfaces();
+var breakIfaces = false;
+
+Object.keys(ifaces).every(function (ifname) {
+
+  ifaces[ifname].forEach(function (iface) {
+
+    if ('IPv4' !== iface.family || iface.internal !== false) {
+      // skip over internal (i.e. 127.0.0.1) and non-ipv4 addresses
+      return true;
+    }
+
+    //console.log(ifname, iface.address);
+    process.env.ADDRESS = iface.address;
+    return true;
+
+  });
+
+  if (breakIfaces) {
+    return true;
+  }
+
+});
+
+
+var logger   = require(process.cwd() + '/config/logger.js');
+var cron     = require(process.cwd() + '/config/cron.js');
+var socks    = require(process.cwd() + '/config/socket.js');
+
+var app      = require('./app');
+var debug    = require('debug')('bin:server');
+var http     = require('http');
+var https    = require('https');
+var fs       = require('fs');
+var soap     = require('soap');
+
+//var mongoose = require('mongoose');
+//var urlMongo = require(process.cwd() + '/config/mongodb');
+
+var listenDelivery = require('../src/utils/escutandoPastaDelivery');
+
+const options = {
+  key: fs.readFileSync(process.cwd() + '/config/privada14967.key'),
+  cert: fs.readFileSync(process.cwd() + '/config/evolog_com_br.crt'),
+  ca: [
+    fs.readFileSync(process.cwd() + '/config/DigiCertCA.crt')
+]
+};
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+//const hostname = '0.0.0.0';
+//var port = normalizePort(process.env.PORT || '80' || '3000');
+app.set('port', process.env.PORT);
+
+
+/**
+ * Create HTTP server.
+ */
+var server = http.createServer(app);
+
+server.timeout = parseInt(process.env.SERVER_TIMEOUT);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+server.listen(process.env.PORT, process.env.HOSTNAME, () => {
+  console.log('');
+  logger.info('Servidor iniciado!');
+  logger.info(`Server rodando em: http://${process.env.ADDRESS}:${process.env.PORT}/`);
+  console.log('');
+});
+
+server.on('error', onError);
+server.on('listening', onListening);
+
+
+//Sockets
+
+const chat = new socks(server, '/evolog');
+
+process.on('SIGINT', function () {
+  console.log('');
+  logger.info("Finalizando o CRON...");
+  for (var key in cron) {
+    logger.info("Tarefa: " + key);
+    cron[key].stop();
+  }
+  // mongoose.connection.close(function() {
+  console.log('');
+  logger.info('Aplicação terminada, conexão fechada!');
+  process.exit(0);
+  //});
+});
+
+// Connect to mongodb
+/* var connect = function () {
+  mongoose.connect(urlMongo.mongodburl, { useMongoClient: true });
+};
+connect();
+
+var db = mongoose.connection;
+
+db.on('error', function (error) {
+  console.log("Error loading the db - " + error);
+});
+
+db.on('disconnected', connect); */
+
+//listenDelivery.listenFolder();
+
+//--------------------------------------------------------------------
+
+soap.listen(server,
+  '/soap/wh/regMil',
+  app.src.modWarehouse.soap.services.ZWS_MILESTONE_SET,
+  require('fs').readFileSync(`${process.env.SOAP_WH_SERVER_PATH}regmil.wsdl`, 'utf8')
+);
+
+soap.listen(server,
+  '/soap/wh/confinb',
+  app.src.modWarehouse.soap.services.ZWS_CONFIRMA_INBOUND,
+  require('fs').readFileSync(`${process.env.SOAP_WH_SERVER_PATH}confInb.wsdl`, 'utf8')
+);
+
+soap.listen(server,
+  '/Iwhc',
+  app.src.modWarehouse.soap.services.Iwhcservice,
+  require('fs').readFileSync(`${process.env.SOAP_WH_SERVER_PATH}saveDelivery.wsdl`, 'utf8')
+);
+
+
+
+
+//Trabalhando HTTPS
+if (process.env.PORT == 80 || process.env.PORT == 3010) {
+  var serverHttps = https.createServer(options, app);
+
+  console.log('');
+  logger.warn("Iniciando o WSDL...");
+  /* soap.listen(server,
+    '/mockpublishCancelServiceRequestBinding',
+    app.src.modIntegrador.wsdl.publishCancelService,
+    require('fs').readFileSync('./src/modIntegrador/wsdl/publishCancelService.wsdl', 'utf8'));
+  logger.info('/mockpublishCancelServiceRequestBinding?wsdl'); */
+
+  soap.listen(serverHttps,
+    '/mockpublishReleasedTripRequestBinding',
+    app.src.modIntegrador.wsdl.publishReleasedTripService,
+    require('fs').readFileSync('./src/modIntegrador/wsdl/publishReleasedTripService.wsdl', 'utf8'));
+  logger.info('/mockpublishReleasedTripRequestBinding?wsdl');
+
+  soap.listen(serverHttps,
+    '/publishTransition',
+    app.src.modIntegrador.wsdl.publishTransitionService,
+    require('fs').readFileSync('./src/modIntegrador/wsdl/publishTransition.wsdl', 'utf8'));
+  logger.info('/publishTransition?wsdl');
+
+  soap.listen(serverHttps,
+    '/publishOccurrence',
+    app.src.modIntegrador.wsdl.publishOccurrenceService,
+    require('fs').readFileSync('./src/modIntegrador/wsdl/publishOccurrence.wsdl', 'utf8'));
+  logger.info('/publishOccurrence?wsdl');
+
+
+  soap.listen(serverHttps,
+    '/Iwhc',
+    app.src.modWarehouse.soap.services.Iwhcservice,
+    require('fs').readFileSync(`${process.env.SOAP_WH_SERVER_PATH}saveDelivery.wsdl`, 'utf8')
+  );
+
+  soap.listen(serverHttps,
+    '/soap/wh/regMil',
+    app.src.modWarehouse.soap.services.ZWS_MILESTONE_SET,
+    require('fs').readFileSync(`${process.env.SOAP_WH_SERVER_PATH}regmil.wsdl`, 'utf8')
+  );
+
+  soap.listen(serverHttps,
+    '/soap/wh/confinb',
+    app.src.modWarehouse.soap.services.ZWS_CONFIRMA_INBOUND,
+    require('fs').readFileSync(`${process.env.SOAP_WH_SERVER_PATH}confInb.wsdl`, 'utf8')
+  );
+
+
+
+
+
+
+  let portHTTPS = 443;
+  if (process.env.PORT == 3010) {
+    portHTTPS = 3009;
+  }
+
+  serverHttps.listen(portHTTPS, process.env.HOSTNAME, () => {
+    console.log('');
+    logger.info('Servidor HTTPS iniciado!');
+    logger.info(`Server rodando em: https://${process.env.ADDRESS}:${portHTTPS}/`);
+    console.log('');
+  });
+  serverHttps.on('error', onError);
+  serverHttps.on('listening', onListening);
+}
+/* process.on('uncaughtException', function(err) {
+  console.log(err.stack);
+  throw err;
+}); 
+process.on('SIGSTOP', function() {
+	console.log('Aplicação terminada, conexão fechada!');
+	process.exit(0);
+});
+process.on('exit', function () {
+  console.log('Aplicação terminada, conexão fechada!');
+  server.close();
+  process.exit(0);
+});*/
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof process.env.PORT === 'string'
+    ? 'Pipe ' + process.env.PORT
+    : 'Port ' + process.env.PORT;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}

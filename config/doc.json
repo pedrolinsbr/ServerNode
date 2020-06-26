@@ -1,0 +1,28 @@
+{
+  "tags": {
+      "allowUnknownTags": true
+  },
+  "source": {
+    "includePattern": ".+\\.js(doc|x)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "sourceType": "module",
+  "plugins": [
+    "plugins/markdown"
+  ],
+  "templates": {
+      "cleverLinks": false,
+      "monospaceLinks": false,
+      "default": {
+            "outputSourceFiles": true,
+            "outputSourcePath": true  
+        },
+        "systemName"      : "Documentação",
+        "copyright"       : "Bravo",
+        "navType"         : "inline",
+        "theme"           : "flatly",
+        "linenums"        : true,
+        "collapseSymbols" : false,
+        "inverseNav"      : true
+  }
+}

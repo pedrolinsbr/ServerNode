@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soap:Body>
+      <ns2:publishReleasedTrip xmlns:ns2="urn:neolog:cockpit:TripReleaseRequestPublishingService">
+         <messageId>2</messageId>
+         <tripReleaseRequests>
+            <tripReleaseRequest>
+               <regionSourceId>DEFAULT</regionSourceId>
+               <identifier>201</identifier>
+               <freightValue>0.0</freightValue>
+               <vehicleId>Carreta (25t)</vehicleId>
+               <vehicleDescription>Carreta com 28 Paletes</vehicleDescription>
+               <truckLicensePlate>HBN-0351</truckLicensePlate>
+               <loads>
+                  <load>
+                     <identifier>32</identifier>
+                     <serviceTypeId>4</serviceTypeId>
+                     <serviceTypeDescription>Frota propria</serviceTypeDescription>
+                     <loadMode>2</loadMode>
+                     <modal>1</modal>
+                     <distance>427.46097</distance>
+                     <freight>0.0</freight>
+                     <dispatchLimitTime>2017-06-13T15:04:39.401-03:00</dispatchLimitTime>
+                     <stops>
+                        <stop>
+                           <identifier>94</identifier>
+                           <localitySourceId>1001</localitySourceId>
+                           <transportZoneId />
+                           <sequenceOnLoad>1</sequenceOnLoad>
+                           <subStops>
+                              <subStop>
+                                 <identifier>99</identifier>
+                                 <arrivalTime>2017-06-13T14:48:51.874-03:00</arrivalTime>
+                                 <startServiceTime>2017-06-13T14:48:51.874-03:00</startServiceTime>
+                                 <endServiceTime>2017-06-13T15:03:51.874-03:00</endServiceTime>
+                                 <departureTime>2017-06-13T15:03:51.874-03:00</departureTime>
+                                 <loadedShipmentUnits>
+                                    <shipmentUnit>
+                                       <identifier>37594</identifier>
+                                       <shipmentUnitCategoryId>4</shipmentUnitCategoryId>
+                                       <shipmentUnitDescription>Granel Unit</shipmentUnitDescription>
+                                       <shipmentUnitQty>3000.0</shipmentUnitQty>
+                                       <weight>4236.0</weight>
+                                       <volume>101.568</volume>
+                                       <length>0.32</length>
+                                       <width>0.23</width>
+                                       <height>0.46</height>
+                                       <palletHeightTotal>0.0</palletHeightTotal>
+                                       <deliveryUnitList>
+                                          <deliveryUnit>
+                                             <identifier>37594</identifier>
+                                             <orderSourceId>0090627600_4</orderSourceId>
+                                             <orderTypeSourceId>Padrao</orderTypeSourceId>
+                                             <orderItemSourceId>0090627600_4_1</orderItemSourceId>
+                                             <productSourceId>AG10.007.006.0003</productSourceId>
+                                             <quantity>3000.0</quantity>
+                                             <price>63.27</price>
+                                             <deliveryDate>2017-06-14T06:59:12.473-03:00</deliveryDate>
+                                             <integrationSource>DEFAULT</integrationSource>
+                                          </deliveryUnit>
+                                       </deliveryUnitList>
+                                    </shipmentUnit>
+                                 </loadedShipmentUnits>
+                              </subStop>
+                           </subStops>
+                        </stop>
+                        <stop>
+                           <identifier>95</identifier>
+                           <localitySourceId>100034</localitySourceId>
+                           <transportZoneId />
+                           <sequenceOnLoad>2</sequenceOnLoad>
+                           <subStops>
+                              <subStop>
+                                 <identifier>100</identifier>
+                                 <arrivalTime>2017-06-14T01:45:03.362-03:00</arrivalTime>
+                                 <startServiceTime>2017-06-14T06:59:12.473-03:00</startServiceTime>
+                                 <endServiceTime>2017-06-14T07:14:12.473-03:00</endServiceTime>
+                                 <departureTime>2017-06-14T07:14:12.473-03:00</departureTime>
+                                 <unloadedShipmentUnits>
+                                    <shipmentUnit>
+                                       <identifier>37594</identifier>
+                                       <shipmentUnitCategoryId>4</shipmentUnitCategoryId>
+                                       <shipmentUnitDescription>Granel Unit</shipmentUnitDescription>
+                                       <shipmentUnitQty>3000.0</shipmentUnitQty>
+                                       <weight>4236.0</weight>
+                                       <volume>101.568</volume>
+                                       <length>0.32</length>
+                                       <width>0.23</width>
+                                       <height>0.46</height>
+                                       <palletHeightTotal>0.0</palletHeightTotal>
+                                       <deliveryUnitList>
+                                          <deliveryUnit>
+                                             <identifier>37594</identifier>
+                                             <orderSourceId>0090627600_4</orderSourceId>
+                                             <orderTypeSourceId>Padrao</orderTypeSourceId>
+                                             <orderItemSourceId>0090627600_4_1</orderItemSourceId>
+                                             <productSourceId>AG10.007.006.0003</productSourceId>
+                                             <quantity>3000.0</quantity>
+                                             <price>63.27</price>
+                                             <deliveryDate>2017-06-14T06:59:12.473-03:00</deliveryDate>
+                                             <integrationSource>DEFAULT</integrationSource>
+                                          </deliveryUnit>
+                                       </deliveryUnitList>
+                                    </shipmentUnit>
+                                 </unloadedShipmentUnits>
+                              </subStop>
+                           </subStops>
+                        </stop>
+                     </stops>
+                  </load>
+               </loads>
+            </tripReleaseRequest>
+         </tripReleaseRequests>
+      </ns2:publishReleasedTrip>
+   </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:n1="urn:sap-com:document:sap:rfc:functions">
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="date10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+          <xsd:pattern value="\d\d\d\d-\d\d-\d\d"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:n0="urn:sap-com:document:sap:rfc:functions">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions"/>
+      <xsd:complexType name="VbelnLine">
+        <xsd:sequence>
+          <xsd:element name="Vbeln" type="n0:char10"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TVbeln">
+        <xsd:sequence>
+          <xsd:element name="item" type="tns:VbelnLine" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZmfMilestoneSet">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Date" type="n0:date10"/>
+            <xsd:element name="ItVbeln" type="tns:TVbeln"/>
+            <xsd:element name="Milestonecode" type="n0:char3"/>
+            <xsd:element name="Time" type="n0:char6"/>
+            <xsd:element name="Timezone" type="n0:char20" minOccurs="0"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZmfMilestoneSetResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EvOk" type="n0:char1"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZmfMilestoneSet">
+    <wsdl:part name="parameters" element="tns:ZmfMilestoneSet"/>
+  </wsdl:message>
+  <wsdl:message name="ZmfMilestoneSetResponse">
+    <wsdl:part name="parameter" element="tns:ZmfMilestoneSetResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ZWS_MILESTONE_SET">
+    <wsdl:operation name="ZmfMilestoneSet">
+      <wsdl:input message="tns:ZmfMilestoneSet"/>
+      <wsdl:output message="tns:ZmfMilestoneSetResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RegMil" type="tns:ZWS_MILESTONE_SET">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ZmfMilestoneSet">
+      <soap:operation soapAction="ZmfMilestoneSet" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RegMil_soap12" type="tns:ZWS_MILESTONE_SET">
+    <wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ZmfMilestoneSet">
+      <wsoap12:operation soapAction="ZmfMilestoneSet" style="document"/>
+      <wsdl:input>
+        <wsoap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWS_MILESTONE_SET">
+    <wsdl:port name="RegMil" binding="tns:RegMil">
+      <soap:address location="http://34.235.52.140:3000/soap/wh/regMil"/>
+    </wsdl:port>
+    <wsdl:port name="RegMil_soap12" binding="tns:RegMil_soap12">
+      <wsoap12:address location="http://34.235.52.140:3000/soap/wh/regMil"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
